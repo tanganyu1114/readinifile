@@ -21,6 +21,10 @@ func init() {
 }
 
 func main() {
+	if iniFiles == "" {
+		flag.Usage()
+		return
+	}
 	files := strings.Split(iniFiles, ",")
 	filei := make([]interface{}, 0)
 	for _, file := range files {
